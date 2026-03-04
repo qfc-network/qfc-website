@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { NAV_LINKS, SITE } from '@/lib/constants';
+import { BASE_PATH, NAV_LINKS, SITE } from '@/lib/constants';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center gap-3">
-          <img src="/logo.svg" alt="QFC" className="w-9 h-9 rounded-full" />
+          <img src={`${BASE_PATH}/logo.svg`} alt="QFC" className="w-9 h-9 rounded-full" />
           <span className="text-lg font-bold text-qfc-text tracking-wide">QFC Network</span>
         </a>
 
