@@ -1,5 +1,3 @@
-export const BASE_PATH = process.env.CUSTOM_DOMAIN ? '' : '/qfc-website';
-
 export const SITE = {
   name: 'QFC Network',
   tagline: 'The Future of Decentralized Computing',
