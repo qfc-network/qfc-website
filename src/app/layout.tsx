@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@qfc_network',
-    creator: '@qfc_network',
+    site: '@QFCNetwork',
+    creator: '@QFCNetwork',
     title: 'QFC Network — The Future of Decentralized Computing',
     description: 'Next-generation blockchain with 500K+ TPS, sub-second finality, and quantum-safe security.',
     images: [{ url: '/og-image.png', alt: 'QFC Network' }],
@@ -65,7 +65,7 @@ const jsonLd = {
       url: 'https://qfc.network/logo.svg',
     },
     sameAs: [
-      'https://twitter.com/qfc_network',
+      'https://x.com/QFCNetwork',
       'https://github.com/qfc-network',
       'https://discord.gg/qfc',
     ],

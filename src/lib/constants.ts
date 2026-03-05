@@ -6,7 +6,7 @@ export const SITE = {
   docsUrl: 'https://docs.qfc.network',
   github: 'https://github.com/qfc-network',
   discord: 'https://discord.gg/qfc',
-  twitter: 'https://twitter.com/qfc_network',
+  twitter: 'https://x.com/QFCNetwork',
   explorer: 'https://explorer.testnet.qfc.network',
   faucet: 'https://faucet.testnet.qfc.network',
 };
