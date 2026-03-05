@@ -1,26 +1,74 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://qfc.network'),
-  title: 'QFC Network — The Future of Decentralized Computing',
-  description: 'A next-generation blockchain platform with Proof of Contribution consensus, multi-VM architecture, and quantum-safe cryptography.',
+  title: {
+    default: 'QFC Network — The Future of Decentralized Computing',
+    template: '%s | QFC Network',
+  },
+  description: 'A next-generation blockchain platform with Proof of Contribution consensus, multi-VM architecture, and quantum-safe cryptography. 500K+ TPS, sub-second finality, EVM compatible.',
+  keywords: ['QFC', 'blockchain', 'Proof of Contribution', 'quantum-safe', 'EVM', 'DeFi', 'Web3', 'Layer 1', 'Rust blockchain', 'smart contracts'],
+  authors: [{ name: 'QFC Network', url: 'https://qfc.network' }],
+  creator: 'QFC Network',
   openGraph: {
-    title: 'QFC Network',
+    title: 'QFC Network — The Future of Decentralized Computing',
     description: 'Next-generation blockchain with 500K+ TPS, sub-second finality, and quantum-safe security.',
     url: 'https://qfc.network',
     siteName: 'QFC Network',
-    images: [{ url: '/og-image.png', width: 1024, height: 1024 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'QFC Network' }],
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'QFC Network',
+    site: '@qfc_network',
+    creator: '@qfc_network',
+    title: 'QFC Network — The Future of Decentralized Computing',
     description: 'Next-generation blockchain with 500K+ TPS, sub-second finality, and quantum-safe security.',
-    images: ['/og-image.png'],
+    images: [{ url: '/og-image.png', alt: 'QFC Network' }],
   },
   icons: {
     icon: '/favicon.ico',
+  },
+  alternates: {
+    canonical: 'https://qfc.network',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'QFC Network',
+  url: 'https://qfc.network',
+  description: 'A next-generation blockchain platform with Proof of Contribution consensus, multi-VM architecture, and quantum-safe cryptography.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'QFC Network',
+    url: 'https://qfc.network',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://qfc.network/logo.svg',
+    },
+    sameAs: [
+      'https://twitter.com/qfc_network',
+      'https://github.com/qfc-network',
+      'https://discord.gg/qfc',
+    ],
   },
 };
 
@@ -31,8 +79,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased font-sans">
         {children}
+
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );
