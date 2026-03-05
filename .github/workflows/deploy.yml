@@ -27,6 +27,10 @@ jobs:
 
       - run: npm install
       - run: npm run build
+        env:
+          NEXT_PUBLIC_GA_ID: G-20XW5FDM3N
+        env:
+          NEXT_PUBLIC_GA_ID: G-20XW5FDM3N
 
       - uses: actions/upload-pages-artifact@v3
         with:
