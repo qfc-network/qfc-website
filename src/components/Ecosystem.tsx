@@ -75,7 +75,7 @@ export default function Ecosystem() {
           {ECOSYSTEM.map((item) => (
             <a
               key={item.repo}
-              href={`${SITE.github}/${item.repo}`}
+              href={item.href ?? `${SITE.github}/${item.repo}`}
               target="_blank"
               rel="noopener noreferrer"
               className="card-hover flex items-center gap-4 p-5 rounded-xl bg-qfc-card border border-white/5"

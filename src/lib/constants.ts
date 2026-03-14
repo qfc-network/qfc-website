@@ -9,6 +9,8 @@ export const SITE = {
   twitter: 'https://x.com/QFCNetwork',
   explorer: 'https://explorer.testnet.qfc.network',
   faucet: 'https://faucet.testnet.qfc.network',
+  bridge: 'https://bridge.testnet.qfc.network',
+  nftMarketplace: 'https://nft.testnet.qfc.network',
 };
 
 export const STATS = [
@@ -59,13 +61,15 @@ export const ARCHITECTURE_LAYERS = [
 
 export const ECOSYSTEM = [
   { name: 'QFC Wallet', description: 'Browser extension wallet', repo: 'qfc-wallet', icon: 'wallet' },
-  { name: 'Block Explorer', description: 'Real-time blockchain explorer', repo: 'qfc-explorer', icon: 'explorer' },
+  { name: 'Block Explorer', description: 'Inspect blocks, transactions, and addresses', repo: 'qfc-explorer', icon: 'explorer', href: SITE.explorer },
+  { name: 'Testnet Faucet', description: 'Get testnet QFC for development and testing', repo: 'qfc-faucet', icon: 'faucet', href: SITE.faucet },
+  { name: 'QFC Bridge', description: 'Move assets between QFC and other networks', repo: 'qfc-bridge', icon: 'contracts', href: SITE.bridge },
+  { name: 'NFT Marketplace', description: 'Browse, mint, and trade NFTs on QFC', repo: 'qfc-nft-marketplace', icon: 'mobile', href: SITE.nftMarketplace },
+  { name: 'Documentation', description: 'Build on QFC with guides, APIs, and SDKs', repo: 'qfc-docs', icon: 'docs', href: SITE.docsUrl },
   { name: 'JavaScript SDK', description: 'TypeScript SDK for DApp development', repo: 'qfc-sdk-js', icon: 'js' },
   { name: 'Python SDK', description: 'Python SDK for backend integration', repo: 'qfc-sdk-python', icon: 'python' },
   { name: 'CLI Tools', description: 'Command-line interface', repo: 'qfc-cli', icon: 'cli' },
   { name: 'Smart Contracts', description: 'Solidity contract library', repo: 'qfc-contracts', icon: 'contracts' },
-  { name: 'Testnet Faucet', description: 'Get testnet QFC tokens', repo: 'qfc-faucet', icon: 'faucet' },
-  { name: 'Documentation', description: 'Developer docs and guides', repo: 'qfc-docs', icon: 'docs' },
   { name: 'Mobile Wallet', description: 'iOS & Android wallet', repo: 'qfc-wallet-mobile', icon: 'mobile' },
 ];
 
