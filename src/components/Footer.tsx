@@ -1,4 +1,4 @@
-import { SITE, NAV_LINKS } from '@/lib/constants';
+import { NAV_LINKS } from '@/lib/constants';
 
 export default function Footer() {
   return (
@@ -9,7 +9,7 @@ export default function Footer() {
           <span className="text-sm font-semibold text-qfc-text/80">QFC Network</span>
         </div>
 
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-6 flex-wrap justify-center">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -21,14 +21,6 @@ export default function Footer() {
               {link.label}
             </a>
           ))}
-          <a
-            href={SITE.faucet}
-            className="text-xs text-qfc-text/40 hover:text-qfc-primary transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Faucet
-          </a>
         </nav>
 
         <p className="text-xs text-qfc-text/30">

@@ -96,7 +96,10 @@ const tx = await wallet.sendTransaction({
 console.log(\`TX Hash: \${tx.hash}\`);`;
 
 export const NAV_LINKS = [
-  { label: 'Docs', href: 'https://docs.qfc.network' },
-  { label: 'GitHub', href: 'https://github.com/qfc-network' },
-  { label: 'Explorer', href: 'https://explorer.testnet.qfc.network' },
+  { label: 'Docs', href: SITE.docsUrl },
+  { label: 'Explorer', href: SITE.explorer },
+  { label: 'Faucet', href: SITE.faucet },
+  { label: 'Bridge', href: SITE.bridge },
+  { label: 'NFT Marketplace', href: SITE.nftMarketplace },
+  { label: 'GitHub', href: SITE.github },
 ];
